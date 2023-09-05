@@ -1,0 +1,335 @@
+#ap-app-header {
+    height: 80px;
+    background: #1b1565 linear-gradient(90deg, #1b1565 0%, #0070bb 100%) 0% 0% no-repeat;
+}
+
+    #ap-app-header #ap-user-menu::after {
+        border-top-color: #fff;
+    }
+
+    #ap-app-header .ap-user-image {
+        margin-right: 8px;
+    }
+
+    #ap-app-header .ap-username {
+        color: #fff;
+        font-weight: 600;
+    }
+
+#ap-app-welcome {
+    font-size: 1.500rem;
+    margin-bottom: 0;
+}
+
+.ap-app-section {
+    background-color: #fff;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#ap-progress-wrapper {
+    border-top: 1px solid #eaeaea;
+}
+
+
+#ap-application-progress h5 {
+    color: #1b1565;
+}
+
+#ap-step-progress {
+    width: 120px;
+    height: 120px;
+    margin: 16px auto;
+}
+
+#ap-application-progress circle,
+#ap-application-progress circle + path {
+    stroke-width: 15px;
+}
+
+    #ap-application-progress circle + path {
+        stroke: #1b1565;
+    }
+
+#ap-app-steps {
+    overflow: auto;
+}
+
+    #ap-app-steps ul {
+        list-style: none;
+        display: flex;
+        padding: 24px;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    #ap-app-steps li::after {
+        content: '';
+        width: 4px;
+        height: 32px;
+        border-radius: 20px;
+        display: block;
+        background-color: #1b1565;
+        margin: 4px 0;
+        margin-left: 12px;
+    }
+
+    #ap-app-steps li:last-child::after {
+        display: none;
+    }
+
+    #ap-app-steps .active ~ li {
+        opacity: 20%;
+    }
+
+    #ap-app-steps .ap-step-title {
+        font-size: 1.250rem;
+        margin-left: 20px;
+    }
+
+#ap-steps-title {
+    padding: 24px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+#ap-app-steps h6 {
+    font-size: 1.250rem;
+    color: #1b1565;
+    margin-bottom: 0;
+}
+
+#ap-app-footer {
+    height: 80px;
+}
+
+    #ap-app-footer p {
+        margin-bottom: 0;
+    }
+
+#ap-section-content {
+    height: calc(100% - 80px);
+    overflow: auto;
+    padding: 24px;
+}
+
+#ap-section-actions {
+    height: 80px;
+    box-shadow: 0 -19px 20px rgba(195, 198,209, 10%);
+    padding: 0 24px;
+}
+
+    #ap-section-actions .btn-primary {
+        margin-left: 24px;
+    }
+
+fieldset {
+    padding: 24px;
+    border: 1px solid #c3c6d1;
+    border-radius: 5px;
+}
+
+    fieldset ~ fieldset {
+        margin-top: 24px;
+    }
+
+    fieldset > legend {
+        color: #1b1565;
+        font-size: 20px;
+        font-weight: 600;
+        float: none;
+        width: auto;
+        padding: 0 8px;
+        background-color: #fff;
+    }
+
+.ap-color-ineligible {
+    color: #c91f3c;
+}
+
+.ap-color-eligible {
+    color: #1aa723;
+}
+
+#ap-eligible label {
+    margin-left: 8px;
+    margin-top: -4px;
+}
+
+.ap-plan-container {
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(19, 23, 31, 0.07);
+    padding: 16px 0;
+}
+
+    .ap-plan-container .k-radio-label {
+        font-size: 1.250rem;
+        color: #1b1565;
+        font-weight: 600;
+        margin-left: 8px;
+    }
+
+    .ap-plan-container .ap-plan-details {
+        padding-left: 24px;
+    }
+
+        .ap-plan-container .ap-plan-details p {
+            margin: 16px 0;
+        }
+
+@media screen and (min-width: 1200px) {
+    body {
+        overflow: hidden;
+    }
+
+    #ap-app-wrapper {
+        height: calc(100vh - 240px)
+    }
+
+    #ap-app-intro {
+        height: 80px;
+    }
+
+
+    #ap-app-steps ul {
+        flex-direction: column;
+    }
+
+    .ap-steps-col {
+        width: 300px;
+        flex: 0 0 300px;
+    }
+
+    .ap-content-col {
+        flex: 1 1;
+    }
+}
+
+@media screen and (min-width: 1200px) and (max-width: 1366px) {
+    #ap-app-welcome {
+        font-size: 1.250rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+
+    #ap-app-intro .ap-global-actions {
+        padding: 16px 0 0 0;
+        gap: 32px;
+    }
+
+    #ap-app-steps li {
+        margin-right: 40px;
+    }
+
+        #ap-app-steps li .ap-step-title,
+        #ap-app-steps li::after {
+            display: none;
+        }
+}
+
+@media screen and (max-width: 768px) {
+    #ap-app-intro .ap-global-actions .ap-global-action-label {
+        display: none;
+    }
+
+    #ap-user-menu .ap-username,
+    #ap-user-menu::after {
+        display: none;
+    }
+
+    #ap-app-header .ap-user-image {
+        margin-right: 0;
+    }
+}
+
+
+/* Overrides */
+.k-arcgauge-label {
+    font-size: 1.375rem;
+    color: #1b1565;
+    font-weight: 600;
+}
+
+.k-floating-label-container {
+    display: flex;
+    padding-top: 0;
+}
+
+.k-input,
+.k-dropdownlist {
+    height: calc(3.5rem + 2px);
+    background-color: #fff;
+    border-color: #ced4da;
+    color: inherit;
+}
+
+    .k-dropdownlist:focus,
+    .k-dropdownlist:hover {
+        background-color: #fff;
+        border-color: #ced4da;
+    }
+
+
+    .k-dropdownlist:focus {
+        box-shadow: 0 0 0 0.25rem rgba(13,110,253,.25);
+    }
+
+
+.k-input-md .k-input-inner {
+    padding-inline: .75rem;
+    padding-block: 1rem;
+    font-size: 16px;
+}
+
+.k-floating-label-container.k-empty > .k-label {
+    top: calc(1rem + 1px);
+    left: calc(0.75rem + 1px);
+}
+
+.k-floating-label-container:focus-within > .k-label,
+.k-floating-label-container > .k-label,
+.k-floating-label-container.k-focus > .k-label {
+    top: 0;
+    opacity: .65;
+    left: calc(0.75rem + 1px);
+    transform: scale(.85);
+}
+
+.k-floating-label-container.k-empty:not(.k-focus) > .k-label {
+    opacity: 1;
+}
+
+.k-datepicker .k-input-button {
+    width: 58px;
+}
+
+.k-grid {
+    overflow: auto;
+}
+
+    .k-grid .k-grid-table .k-table-thead .k-table-row {
+        background-color: #1b1565;
+    }
+
+        .k-grid .k-grid-table .k-table-thead .k-table-row .k-table-th {
+            color: #fff;
+            font-weight: 600;
+            padding: 12px 16px;
+        }
+
+            .k-grid .k-grid-table .k-table-thead .k-table-row .k-table-th .k-sort-icon svg {
+                fill: #fff;
+            }
+
+
+    .k-grid .k-grid-table .k-table-tbody .k-table-row {
+        background-color: #e7e7e7;
+    }
+
+        .k-grid .k-grid-table .k-table-tbody .k-table-row.k-table-alt-row {
+            background-color: #fff;
+        }
+
+        .k-grid .k-grid-table .k-table-tbody .k-table-row .k-table-td {
+            padding: 12px 16px;
+        }

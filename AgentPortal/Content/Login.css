@@ -1,0 +1,31 @@
+#ap-login-wrapper {
+    height: 100vh;
+}
+
+#ap-login-intro-wrapper {
+    max-width: 800px;
+    background: #1b1565 url('/Images/LoginPattern.png') no-repeat center center;
+    background-size: cover;
+}
+
+#ap-login-form {
+    width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 24px #8d8d8d29;
+}
+
+#ap-login-intro {
+    padding: 0 80px;
+}
+
+    #ap-login-intro h1,
+    #ap-login-intro p {
+        color: #fff;
+    }
+
+    #ap-login-intro h1 {
+        font-size: 1.875rem;
+        margin-bottom: 30px;
+    }

@@ -1,0 +1,91 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+<div class="container-fluid h-100 p-0">
+    <div class="row h-100 g-0">
+        <div id="ap-login-intro-wrapper" class="col d-flex justify-content-center align-items-center d-none d-xl-flex h-100">
+            <div id="ap-login-intro">
+                <h1 class="lh-base">Unavo's Instant MVNE is analytics-driven Mobile Virtual Network Enabler</h1>
+                <p class="lh-base">This is an advanced, cost effective, convergent Billing and Customer Care solution that efficiently handles virtual mobile networks.</p>
+            </div>
+        </div>
+        <div class="col d-flex justify-content-center align-items-center h-100">
+            <div id="ap-login-form-wrapper">
+                <div id="ap-logo" class="text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.758" height="42.437" viewBox="0 0 214.758 42.437">
+                        <defs>
+                            <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                                <stop offset="0" stop-color="#1b1565" />
+                                <stop offset="1" stop-color="#0070bb" />
+                            </linearGradient>
+                            <clipPath id="clip-path">
+                                <path id="Path_1566" data-name="Path 1566" d="M15.044,39.047l8.791-5.075,8.589,4.959a2.354,2.354,0,0,0-.191.48H24.859a1.207,1.207,0,0,0-2.049,0H15.179a2.327,2.327,0,0,0-.135-.364m3.888-7.905,4.516,2.607-8.594,4.962a2.4,2.4,0,0,0-.543-.563l3.935-6.815a.683.683,0,0,0,.179.026.7.7,0,0,0,.507-.216m5.288,2.607,4.948-2.856,4.117,7.13a2.379,2.379,0,0,0-.65.585ZM29.5,30.7l4.159-2.4a1.2,1.2,0,0,0,.789.436v8.942a2.367,2.367,0,0,0-.821.171Zm-16.285,7V27.843l4.532,2.617a.684.684,0,0,0-.03.193.7.7,0,0,0,.193.483l-3.929,6.805a2.372,2.372,0,0,0-.767-.244m21.62,0v-8.97a1.2,1.2,0,0,0,.891-1.62l7.621-4.4a2.374,2.374,0,0,0,.376.4L35.249,37.785a2.354,2.354,0,0,0-.411-.09M3.929,23.077a2.393,2.393,0,0,0,.362-.389l8.54,4.931V37.675a2.378,2.378,0,0,0-.445.051ZM19.114,30.8a.691.691,0,0,0,.016-.148.7.7,0,0,0-.2-.5l4.909-8.5,5.141,8.9-5.141,2.968ZM4.5,22.362a2.357,2.357,0,0,0,.258-.9h7.136a1.214,1.214,0,0,0,.94.946v4.768ZM13.218,27.4V22.418a1.21,1.21,0,0,0,1.051-.958H23.5l-4.912,8.508a.717.717,0,0,0-.162-.021.7.7,0,0,0-.471.184ZM24.169,21.46H34.451v4.878a1.2,1.2,0,0,0-.984,1.627l-4.157,2.4Zm10.668,4.887V21.46h8.036a2.365,2.365,0,0,0,.267.92l-7.607,4.391a1.207,1.207,0,0,0-.7-.424M4.5,20.172l8.334-4.812v4.671a1.21,1.21,0,0,0-.949,1.043H4.756a2.357,2.357,0,0,0-.258-.9M34.838,15.36l8.3,4.794a2.362,2.362,0,0,0-.267.92H34.838Zm-4.67-2.7,4.284,2.473v5.937H24.169l4.61-7.985a1.19,1.19,0,0,0,1.388-.425M13.218,20.019V15.137l5.141-2.968,5.141,8.9H14.279a1.205,1.205,0,0,0-1.061-1.055M24.305,9.28l3.777,2.181a1.2,1.2,0,0,0,.359,1.441l-4.607,7.98-5.141-8.9,4.67-2.7a.7.7,0,0,0,.941,0M3.929,19.457,12.437,4.721a2.4,2.4,0,0,0,.395.041V14.914l-8.54,4.931a2.375,2.375,0,0,0-.362-.388m30.909-4.542V4.742a2.4,2.4,0,0,0,.363-.076l8.525,14.766a2.388,2.388,0,0,0-.376.4Zm-4.5-2.6a1.174,1.174,0,0,0-.372-1.288l3.707-6.422a2.379,2.379,0,0,0,.775.155v9.93ZM13.218,4.74a2.368,2.368,0,0,0,.723-.223l4.225,7.318-4.947,2.856ZM24.509,8.951a.683.683,0,0,0,.03-.193.71.71,0,0,0-.016-.148L32.685,3.9a2.391,2.391,0,0,0,.641.542l-3.688,6.387a1.2,1.2,0,0,0-1.343.31ZM14.273,4.319a2.389,2.389,0,0,0,.531-.524L23.146,8.61a.71.71,0,0,0-.016.148.7.7,0,0,0,.03.193L18.5,11.641Zm.735-.853a2.344,2.344,0,0,0,.143-.342h17.11a2.364,2.364,0,0,0,.205.455L24.342,8.269a.7.7,0,0,0-1.014,0ZM34.524,0a2.382,2.382,0,0,0-2.344,1.964H15.231a2.382,2.382,0,1,0-3.849,2.265L2.89,18.939a2.382,2.382,0,1,0-.507,4.71,2.372,2.372,0,0,0,.507-.055L11.345,38.24a2.382,2.382,0,1,0,3.867,2.33H22.74a1.207,1.207,0,0,0,2.188,0H32.2A2.382,2.382,0,1,0,36.234,38.4L44.775,23.6a2.383,2.383,0,1,0,.471-4.718,2.4,2.4,0,0,0-.471.047L36.2,4.077A2.382,2.382,0,0,0,34.524,0Z" fill="url(#linear-gradient)" />
+                            </clipPath>
+                        </defs>
+                        <g id="Logo" transform="translate(-82.67 -3)">
+                            <text id="Agent_Portal" data-name="Agent Portal" transform="translate(139.428 32.864)" fill="#1b1565" font-size="26" font-weight="600" letter-spacing="-0.02em"><tspan x="0" y="0">Agent Portal</tspan></text>
+                            <g id="Group_3436" data-name="Group 3436" transform="translate(82.67 3)">
+                                <g id="Group_3434" data-name="Group 3434" clip-path="url(#clip-path)">
+                                    <rect id="Rectangle_833" data-name="Rectangle 833" width="47.629" height="42.437" transform="translate(0 0)" fill="url(#linear-gradient)" />
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+
+                </div>
+                <div id="ap-login-form" class="my-4">
+                    <form class="needs-validation" novalidate method="post" action="/App/PersonalInfo">
+                        <fieldset>
+                            <legend class="text-center mb-4 h6">Login to your agent account</legend>
+                            <div class="form-floating mb-4">
+                                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" autocomplete="off" required>
+                                <label for="floatingInput">Email address</label>
+                                <div class="invalid-feedback">
+                                    Invalid Email Address
+                                </div>
+                            </div>
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                                <label for="floatingPassword">Password</label>
+                                <div class="invalid-feedback">
+                                    Invalid Password
+                                </div>
+                            </div>
+                            <div class="d-grid mb-3">
+                                <button class="btn btn-primary" type="submit">Log In</button>
+                            </div>
+                            <div class="form-check mb-4">
+                                @(Html.Kendo().CheckBox().Name("rememberMe").HtmlAttributes(new { @class = "form-check-input" }).Checked(false).Label("Remember Me"))
+                            </div>
+                            <a href="#">Forgot Your Password?</a>
+                        </fieldset>
+                    </form>
+                </div>
+                <p class="text-center">Unable to Login? <a href="#" class="fw-bold">Contact your admin</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    (function () {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        var forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.prototype.slice.call(forms)
+            .forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+    })()
+</script>

@@ -1,0 +1,159 @@
+﻿@{
+    ViewBag.Title = "Payments";
+}
+
+<form novalidate method="post" action="/App/Enroll" class="h-100">
+    <section id="ap-section-content">
+        <fieldset>
+            <legend>Payments</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        @(Html.Kendo().Grid<AgentPortal.Models.Payments>()
+                            .Name("PaymentsGrid")
+                            .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .Read(read => read.Action("PaymentList", "App"))
+                            )
+                            .Columns(columns =>
+                            {
+                                columns.Template(@<text></text>).ClientTemplate("<input type='checkbox' class='checkbox' />").HeaderTemplate("<input type='checkbox' class='check-all' />").Width(30);
+                                columns.Bound(m => m.Items).Title("Item");
+                                columns.Bound(m => m.Price).Title("Price");
+                                columns.Bound(m => m.Status).Title("Status");
+                            })
+                            .Sortable()
+                        )
+                    </div>
+                    <div class="col d-flex align-items-center">
+                        <h5>Total Price: $12.00</h5>
+                    </div>
+                    <div class="col-auto d-flex align-items-center">
+                        <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#paymentForm">
+                            Proceed to Pay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+
+    <!-- Section Actions -->
+    <section id="ap-section-actions">
+        <div class="container-fluid h-100 p-0">
+            <div class="row h-100">
+                <div class="col d-flex align-items-center">
+                    <button class="btn btn-outline-secondary" type="reset">Reset</button>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-end">
+                    <button class="btn btn-primary" type="button">Save as Draft</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<!-- Consent Form Modal -->
+<div class="modal fade" id="paymentForm" tabindex="-1" aria-labelledby="paymentLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="paymentLabel">Payment</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center mb-4">
+                        <!-- Select Payment Mode -->
+                        <div class="col col-md-6">
+                            @(Html.Kendo().DropDownList()
+                                .Name("paymentMode")
+                                .DataTextField("Text")
+                                .DataValueField("Value")
+                                .OptionLabel("")
+                                .Label(label =>
+                                {
+                                    label.Content("Select Payment Mode");
+                                    label.Floating(true);
+                                })
+                            )
+                        </div>
+                        <div class="col d-flex align-items-center justify-content-end">
+                            <h5>Total Amount: $12.00</h5>
+                        </div>
+                    </div>
+
+
+                    <div class="row align-items-center mb-4">
+                        <div class="col-12">
+                            <h6>Agent Confirmation</h6>
+                            <p>I confirm I have received $12.00 from the customer listed above for the tablet provied for the Affordable Connectivity Program, per the FCC regulations.</p>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-floating">
+                                <textarea rows="10" class="form-control" placeholder="Leave a comment here" id="agentSign" style="height: 100px"></textarea>
+                                <label for="agentSign">Agent Signature</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center mb-4">
+                        <div class="col-12">
+                            <h6>Customer Confirmation</h6>
+                            <p>I confirm I have paid $12.00 for my tablet provided for the Affordable Connectivity Program, per the FCC regulations.</p>
+                        </div>
+                        <div class="col col-md-6">
+                            <div class="form-floating">
+                                <textarea rows="10" class="form-control" placeholder="Leave a comment here" id="customerSign" style="height: 100px"></textarea>
+                                <label for="customerSign">Customer Signature</label>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <button class="btn btn-outline-primary">Reset</button>
+                        </div>
+                    </div>
+
+                    <div class="row align-items-center">
+                        <div class="col-12">
+                            <h6>Additional Comments</h6>
+                        </div>
+                        <div class="col">
+                            <div class="form-floating">
+                                <textarea rows="10" class="form-control" placeholder="Leave a comment here" id="comments" style="height: 100px"></textarea>
+                                <label for="comments">Comments</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Submit</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // Step Progress
+        $("#ap-step-progress").data("kendoCircularProgressBar").value(90);
+
+        // Handle the "checkAll" checkbox change event
+        $('.check-all').change(function () {
+            var checked = $(this).is(':checked');
+            $('.checkbox').prop('checked', checked);
+        });
+
+        // Handle individual checkbox changes
+        $('.checkbox').change(function () {
+            var allCheckboxes = $('.checkbox');
+            var allChecked = allCheckboxes.length === allCheckboxes.filter(':checked').length;
+            $('.check-all').prop('checked', allChecked);
+        });
+    });
+</script>

@@ -1,0 +1,245 @@
+﻿@{
+    ViewBag.Title = "Plan and Device";
+}
+
+<form novalidate method="post" action="/App/Payments" class="h-100">
+    <section id="ap-section-content">
+        <!-- Plan Details -->
+        <fieldset class="overflow-auto">
+            <legend>Plan</legend>
+            <div class="container-fluid p-0">
+                <div class="row flex-nowrap">
+                    <!-- Plan 1 -->
+                    <div class="col-10 col-md-6 col-lg-4">
+                        <div class="ap-plan-container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        @(Html.Kendo().RadioButton()
+                                        .Name("planGroup")
+                                        .Label("Starter Plan")
+                                        .Value("startPlan")
+                                        .Checked(true)
+                                    )
+                                    </div>
+                                    <div class="col-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ap-plan-details">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h5>Price: $2.00</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plan 2 -->
+                    <div class="col-10 col-md-6 col-lg-4">
+                        <div class="ap-plan-container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        @(Html.Kendo().RadioButton()
+                                        .Name("planGroup")
+                                        .Label("Silver Plan")
+                                        .Value("silverPlan")
+                                        .Checked(false)
+                                    )
+                                    </div>
+                                    <div class="col-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ap-plan-details">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h5>Price: $5.00</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plan 3 -->
+                    <div class="col-10 col-md-6 col-lg-4">
+                        <div class="ap-plan-container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        @(Html.Kendo().RadioButton()
+                                         .Name("planGroup")
+                                         .Label("Gold Plan")
+                                         .Value("goldPlan")
+                                         .Checked(false)
+                                     )
+                                    </div>
+                                    <div class="col-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ap-plan-details">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h5>Price: $7.00</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plan 4 -->
+                    <div class="col-10 col-md-6 col-lg-4">
+                        <div class="ap-plan-container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        @(Html.Kendo().RadioButton()
+                                         .Name("planGroup")
+                                         .Label("Diamond Plan")
+                                         .Value("diamondPlan")
+                                         .Checked(false)
+                                     )
+                                    </div>
+                                    <div class="col-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ap-plan-details">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h5>Price: $10.00</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Plan 5 -->
+                    <div class="col-10 col-md-6 col-lg-4">
+                        <div class="ap-plan-container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col">
+                                        @(Html.Kendo().RadioButton()
+                                         .Name("planGroup")
+                                         .Label("Super Plan")
+                                         .Value("superPlan")
+                                         .Checked(false)
+                                     )
+                                    </div>
+                                    <div class="col-auto">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="ap-plan-details">
+                                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                                            <h5>Price: $12.00</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Device Details -->
+        <fieldset>
+            <legend>Device</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <!-- Device Provided Date -->
+                    <div class="col-12 col-xl-4 mb-4">
+
+                        @(Html.Kendo().DatePicker()
+                        .Name("deviceProvidedDate")
+                        .Format("dd-MM-yyyy")
+                        .Min(DateTime.Today)
+                        .Label(label =>
+                        {
+                            label.Content("Device Provided Date *");
+                            label.Floating(true);
+                        })
+                    )
+                    </div>
+
+                    <!-- Device Delivery Method -->
+                    <div class="col-12 col-xl-4 mb-4">
+                        @(Html.Kendo().DropDownList()
+                         .Name("deviceDeliveryMethod")
+                         .DataTextField("Text")
+                         .DataValueField("Value")
+                         .OptionLabel("")
+                         .Label(label =>
+                         {
+                             label.Content(" Device Delivery Method *");
+                             label.Floating(true);
+                         })
+                     )
+                    </div>
+
+                    <!-- Update Button -->
+                    <div class="col-12 col-md-3 mb-4">
+                        <button class="btn btn-primary">Update</button>
+                    </div>
+
+                    <div class="col-12">
+                        @(Html.Kendo().TabStrip()
+                        .Name("tabstrip")
+                        .SelectedIndex(0)
+                        .Items(tabstrip =>
+                        {
+                            tabstrip.Add().Text("Devices").Content(@<text>
+                               <!-- Content for Tab 1 -->
+                                 @(Html.Kendo().Grid<AgentPortal.Models.Devices>()
+                                .Name("DeviceGrid")
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Read(read => read.Action("DeviceList", "App"))
+                                )
+                                .Sortable()
+                            )
+                            </text>);
+
+                            tabstrip.Add().Text("SIMS").Content(@<text>
+                               <!-- Content for Tab 2 -->
+                                 @(Html.Kendo().Grid<AgentPortal.Models.SIMS>()
+                                .Name("SIMSGrid")
+                                .DataSource(dataSource => dataSource
+                                    .Ajax()
+                                    .Read(read => read.Action("SIMList", "App"))
+                                )
+                                .Sortable()
+                            )
+                            </text>);
+                        })
+                    )
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+
+    <!-- Section Actions -->
+    <section id="ap-section-actions">
+        <div class="container-fluid h-100 p-0">
+            <div class="row h-100">
+                <div class="col d-flex align-items-center">
+                    <button class="btn btn-outline-secondary" type="reset">Reset</button>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-end">
+                    <button class="btn btn-primary" type="button">Save as Draft</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Step Progress
+        $("#ap-step-progress").data("kendoCircularProgressBar").value(75);
+    })
+</script>

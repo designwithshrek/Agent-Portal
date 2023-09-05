@@ -1,0 +1,36 @@
+﻿html {
+    font-size: 16px;
+}
+
+body {
+    background-color: #F2F3F6;
+    font: 1rem/1.5 'Poppins', sans-serif;
+    font-weight: 400;
+    color: #1e1e1e;
+    min-width: 320px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+}
+
+.btn-primary {
+    background: #1b1565 linear-gradient(90deg, #1b1565 0%, #0070bb 100%) 0% 0% no-repeat;
+}
+
+    .btn-primary:hover {
+        background: #1b1565 linear-gradient(90deg, #0070bb 0%, #1b1565 100%) 0% 0% no-repeat;
+    }
+
+
+a:link,
+a:hover,
+a:visited,
+a:active {
+    color: #1e1e1e;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

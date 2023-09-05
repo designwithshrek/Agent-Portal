@@ -1,0 +1,498 @@
+﻿@{
+    ViewBag.Title = "Personal Info";
+}
+
+<form novalidate method="post" action="/App/Documents" class="h-100">
+    <section id="ap-section-content">
+        <fieldset>
+            <legend>Basic Info</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+
+                    <!-- First Name -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="firstName" placeholder="First Name *" autocomplete="off" required>
+                            <label for="firstName">First Name *</label>
+                            <div class="invalid-feedback">
+                                First Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Middle Name -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="middleName" placeholder="Middle Name" autocomplete="off">
+                            <label for="middleName">Middle Name</label>
+                        </div>
+                    </div>
+
+                    <!-- Last Name -->
+                    <div class="col-12 col-md-6 col-xxl-2 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="lastName" placeholder="Last Name *" autocomplete="off" required>
+                            <label for="lastName">Last Name *</label>
+                            <div class="invalid-feedback">
+                                Last Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Name Suffix -->
+                    <div class="col-12 col-md-6 col-xxl-2 mb-4">
+                        @(Html.Kendo().DropDownList()
+                            .Name("suffixDropdown")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Select Suffix");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <!-- Email Address -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="email" class="form-control" id="emailAddress" placeholder="Email Address *" autocomplete="off" required>
+                            <label for="emailAddress">Email Address *</label>
+                            <div class="invalid-feedback">
+                                Email Address is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        @(Html.Kendo().DatePicker()
+                            .Name("datepicker")
+                            .Format("dd-MM-yyyy")
+                            .Min(DateTime.Today)
+                            .Label(label =>
+                            {
+                                label.Content("DOB *");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- Primary Phone -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="primaryPhone" placeholder="Primary Phone *" autocomplete="off" required>
+                            <label for="primaryPhone">Primary Phone *</label>
+                            <div class="invalid-feedback">
+                                Primary Phone is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Secondary Phone -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="secondaryPhone" placeholder="Secondary Phone" autocomplete="off">
+                            <label for="secondaryPhone">Secondary Phone</label>
+                        </div>
+                    </div>
+
+                    <!-- External ID -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="externalID" placeholder="External ID" autocomplete="off">
+                            <label for="externalID">External ID</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-auto mb-4">
+                        <span>
+                            @(Html.Kendo().CheckBox()
+                                  .Name("lifeLineProgram")
+                                  .Label("Lifeline Program")
+                                  .Value("startPlan")
+                                  .Checked(false)
+                              )
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-auto mb-4">
+                        <span>
+                            @(Html.Kendo().CheckBox()
+                                 .Name("acp")
+                                 .Label("Affordable Connectivity Program (ACP)")
+                                 .Value("startPlan")
+                                 .Checked(false)
+                             )
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </span>
+                    </div>
+
+                    <!-- Alternate ID -->
+                    <div class="col-12 mb-4">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="alternateID">
+                            <label class="form-check-label" for="alternateID">Alternate ID</label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </div>
+                    </div>
+
+                    <!-- Select Eligibility Program -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        @(Html.Kendo().DropDownList()
+                            .Name("eligibilityProgram")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Select Eligibility Program");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <!-- SSN (Last 4 Digits) -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="ssn" placeholder="SSN (Last 4 Digits) *" autocomplete="off" required>
+                            <label for="ssn">SSN (Last 4 Digits) *</label>
+                            <div class="invalid-feedback">
+                                SSN is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- NV Application ID -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="nvAppID" placeholder="NV Application ID" autocomplete="off">
+                            <label for="nvAppID">NV Application ID</label>
+                        </div>
+                    </div>
+
+                    <!-- Tribal ID -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="tribalID" placeholder="Tribal ID" autocomplete="off">
+                            <label for="tribalID">Tribal ID</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Address -->
+        <fieldset>
+            <legend>Address</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+
+                    <div class="col-12">
+                        <h6>Registered Address</h6>
+                    </div>
+
+                    <!-- Street Address -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="streetAddress" placeholder="Street Address *" autocomplete="off" required>
+                            <label for="streetAddress">Street Address *</label>
+                            <div class="invalid-feedback">
+                                Street Address is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apartment# or Suite# -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="apartmentSuite" placeholder="Apartment# or Suite#" autocomplete="off">
+                            <label for="apartmentSuite">Apartment# or Suite#</label>
+                        </div>
+                    </div>
+
+                    <!-- ZIP Code -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="zipCode" placeholder="ZIP Code *" autocomplete="off" required>
+                            <label for="zipCode">ZIP Code *</label>
+                            <div class="invalid-feedback">
+                                ZIP Code is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- City -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="city" placeholder="City *" autocomplete="off" required>
+                            <label for="city">City *</label>
+                            <div class="invalid-feedback">
+                                City is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State Dropdown -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                        @(Html.Kendo().DropDownList()
+                            .Name("stateDropdownRegistered")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Select State");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <div class="col-12">
+                        <h6>Mailing Address</h6>
+                    </div>
+
+                    <!-- Street Address -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="streetAddressMA" placeholder="Street Address *" autocomplete="off" required>
+                            <label for="streetAddressMA">Street Address *</label>
+                            <div class="invalid-feedback">
+                                Street Address is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Apartment# or Suite# -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="apartmentSUiteMA" placeholder="Apartment# or Suite#" autocomplete="off">
+                            <label for="apartmentSUiteMA">Apartment# or Suite#</label>
+                        </div>
+                    </div>
+
+                    <!-- ZIP Code -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="zipCodeMA" placeholder="ZIP Code *" autocomplete="off" required>
+                            <label for="zipCodeMA">ZIP Code *</label>
+                            <div class="invalid-feedback">
+                                ZIP Code is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- City -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="cityMA" placeholder="City *" autocomplete="off" required>
+                            <label for="cityMA">City *</label>
+                            <div class="invalid-feedback">
+                                City is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- State Dropdown -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                        @(Html.Kendo().DropDownList()
+                            .Name("stateDropdownMailing")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Select State");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Is Qualify Through Child or Dependent -->
+        <fieldset>
+            <legend>Is Qualified Through Child or Dependent</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+
+                    <!--  BQP First Name -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="bqpFirstName" placeholder="BQP First Name *" autocomplete="off" required>
+                            <label for="bqpFirstName">BQP First Name *</label>
+                            <div class="invalid-feedback">
+                                BQP First Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--  BQP Middle Name -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="bqpMiddleName" placeholder="BQP Middle Name" autocomplete="off" required>
+                            <label for="bqpMiddleName">BQP Middle Name</label>
+                        </div>
+                    </div>
+
+                    <!--  BQP Last Name -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="bqpLastName" placeholder="BQP Last Name *" autocomplete="off" required>
+                            <label for="bqpLastName">BQP Last Name *</label>
+                            <div class="invalid-feedback">
+                                BQP Last Name is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Select Mame Suffix -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-5">
+                        @(Html.Kendo().DropDownList()
+                            .Name("BQPNameSuffix")
+                            .DataTextField("Text")
+                            .DataValueField("Value")
+                            .OptionLabel("")
+                            .Label(label =>
+                            {
+                                label.Content("Select Mame Suffix");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <!-- BQP Date of Birth -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        @(Html.Kendo().DatePicker()
+                            .Name("BQPDOB")
+                            .Format("dd-MM-yyyy")
+                            .Min(DateTime.Today)
+                            .Label(label =>
+                            {
+                                label.Content("BQP DOB *");
+                                label.Floating(true);
+                            })
+                        )
+                    </div>
+
+                    <!-- BQP SSN (Last 4 Digits) -->
+                    <div class="col-12 col-md-6 col-xxl-4 mb-4">
+                        <div class="form-floating">
+                            <input type="text" class="form-control" id="ssnBQP" placeholder="SSN (Last 4 Digits) *" autocomplete="off" required>
+                            <label for="ssnBQP">SSN (Last 4 Digits) *</label>
+                            <div class="invalid-feedback">
+                                SSN is required
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Switch for Qualify-->
+                    <div class="col-12 col-md-auto mb-4">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="qualifiedDepChild">
+                            <label class="form-check-label" for="qualifiedDepChild">
+                                <span>Yes, I am qualify through child or dependent</span>
+                            </label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </div>
+                    </div>
+
+                    <!-- BQP Alternate ID -->
+                    <div class="col-12 col-md-auto mb-4">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="bqpAlternateID">
+                            <label class="form-check-label" for="bqpAlternateID">
+                                <span>Has Alternate ID for BQP</span>
+                            </label>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- Coverage Info -->
+        <fieldset>
+            <legend>Coverage Info</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <!-- -->
+                    <div class="col-12 col-md-auto mb-4">
+                        <strong>Select your coverage</strong>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                    </div>
+
+                    <!-- Get Coverage -->
+                    <div class="col-12 mb-4">
+                        <button type="button" class="btn btn-primary">
+                            Get Coverage
+                        </button>
+                    </div>
+
+                    <div class="col-12 mb-4">
+                        @(Html.Kendo().Grid<AgentPortal.Models.Coverage>()
+                            .Name("CoverageGrid")
+                            .DataSource(dataSource => dataSource
+                                .Ajax()
+                                .Read(read => read.Action("CoverageList", "App"))
+                            )
+                            .Columns(columns =>
+                            {
+                                columns.Template(@<text></text>).ClientTemplate("<input type='checkbox' class='checkbox' />").HeaderTemplate("<input type='checkbox' class='check-all' />").Width(30);
+                                columns.Bound(m => m.Provider).Title("Provider");
+                                columns.Bound(m => m.HasCoverage).Title("Has Coverage");
+                                columns.Bound(m => m.IsValidAddress).Title("Is Valid Address");
+                                columns.Bound(m => m.Remarks).Title("Remarks");
+                            })
+                            .Sortable()
+                        )
+                    </div>
+                </div>
+        </fieldset>
+    </section>
+
+    <!-- Section Actions -->
+    <section id="ap-section-actions">
+        <div class="container-fluid h-100 p-0">
+            <div class="row h-100">
+                <div class="col d-flex align-items-center">
+                    <button class="btn btn-outline-secondary" type="reset">Reset</button>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-end">
+                    <button class="btn btn-primary" type="button">Save as Draft</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // Step Progress
+        $("#ap-step-progress").data("kendoCircularProgressBar").value(0);
+
+        // Handle the "checkAll" checkbox change event
+        $('.check-all').change(function () {
+            var checked = $(this).is(':checked');
+            $('.checkbox').prop('checked', checked);
+        });
+
+        // Handle individual checkbox changes
+        $('.checkbox').change(function () {
+            var allCheckboxes = $('.checkbox');
+            var allChecked = allCheckboxes.length === allCheckboxes.filter(':checked').length;
+            $('.check-all').prop('checked', allChecked);
+        });
+    });
+</script>

@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Eligibility";
+}
+
+<form novalidate method="post" action="/App/PlanDevice" class="h-100">
+    <section id="ap-section-content">
+        <fieldset>
+            <legend>Eligibility</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
+                    <div class="col">
+                        <!-- Not Eligible -->
+                        <div id="ap-not-eligible">
+                            <h1 class="ap-color-ineligible">Oops!</h1>
+                            <p class="mb-4">Not eligible to recieve a device. Subscriber have not passed all the validations and verifications.</p>
+                            <button class="btn btn-primary" type="button" onclick="toggleEligibility();">Submit Your Documents</button>
+                        </div>
+                        <!-- Eligible -->
+                        <div id="ap-eligible" class="d-none">
+                            <h1 class="ap-color-eligible">Hooray!</h1>
+                            <p class="mb-4">Eligible to recieve a device. Subscriber passed all the validations and verifications.</p>
+                            <div class="d-flex">
+                                @(Html.Kendo().CheckBox()
+                                    .Name("planGroup")
+                                    .Label("I understand the provider's obligations under the FCC's rules and orders to ensure that the consumer was presented with clear disclosures regarding the Affordable Connectivity Program (ACP) benefit and regarding their choices within ACP, and that the household provided affirmative consent to applying their ACP benefit to the service for which they are being enrolled.")
+                                    .Value("startPlan")
+                                    .Checked(false)
+                                )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </section>
+
+    <!-- Section Actions -->
+    <section id="ap-section-actions">
+        <div class="container-fluid h-100 p-0">
+            <div class="row h-100">
+                <div class="col d-flex align-items-center">
+                    <button class="btn btn-outline-secondary" type="reset">Reset</button>
+                </div>
+                <div class="col-auto d-flex align-items-center justify-content-end">
+                    <button class="btn btn-primary" type="button">Save as Draft</button>
+                    <button class="btn btn-primary" type="submit">Next</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</form>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        // Step Progress
+        $("#ap-step-progress").data("kendoCircularProgressBar").value(50);
+
+        /* Temporary Logic */
+        toggleEligibility = () => {
+            $("#ap-not-eligible").hide();
+            $("#ap-eligible").toggleClass('d-none');
+        }
+    })
+</script>

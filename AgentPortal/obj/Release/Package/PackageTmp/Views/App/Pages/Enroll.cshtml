@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Enroll";
+}
+
+
+<section id="ap-section-content">
+    <fieldset>
+        <legend>Enroll</legend>
+        <div class="container-fluid p-0">
+            Orders
+            <div class="row">
+                <div class="col">
+                    <!-- Eligible -->
+                    <div id="ap-eligible">
+                        <h1 class="ap-color-eligible">Hooray!</h1>
+                        <p class="mb-4">The customer has been successfully Enrolled in to the NLAD database for ACP program.</p>
+                        <button class="btn btn-primary mb-4" type="button" onclick="activateDevice();">Activate Device</button>
+                        <div id="ap-order-details" class="d-none">
+                            @(Html.Kendo().Grid<AgentPortal.Models.Orders>()
+                                 .Name("PaymentsGrid")
+                                    .DataSource(dataSource => dataSource
+                                        .Ajax()
+                                        .Read(read => read.Action("OrderList", "App"))
+                                    )
+                                    .Sortable()
+                             )
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</section>
+
+<!-- Section Actions -->
+<section id="ap-section-actions">
+    <div class="container-fluid h-100 p-0">
+        <div class="row h-100">
+            <div class="col d-flex align-items-center">
+                <button class="btn btn-outline-secondary" type="reset">Reset</button>
+            </div>
+            <div class="col-auto d-flex align-items-center justify-content-end">
+                <button class="btn btn-primary" type="button">Save as Draft</button>
+                <button id="ap-complete-application" class="btn btn-primary" type="submit" disabled>Complete</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // Step Progress
+        $("#ap-step-progress").data("kendoCircularProgressBar").value(95);
+
+        /* Temporary Logic */
+        activateDevice = () => {
+            $('#ap-order-details').removeClass('d-none');
+            $('#ap-complete-application').removeAttr('disabled')
+        }
+    });
+</script>
