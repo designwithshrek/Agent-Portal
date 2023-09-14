@@ -4,6 +4,7 @@
 
 <form novalidate method="post" action="/App/Documents" class="h-100">
     <section id="ap-section-content">
+        <!-- Basic Info -->
         <fieldset>
             <legend>Basic Info</legend>
             <div class="container-fluid p-0">
@@ -107,27 +108,39 @@
                             <label for="externalID">External ID</label>
                         </div>
                     </div>
+                </div>
+            </div>
+        </fieldset>
 
+        <!-- Govt. Benefits -->
+        <fieldset>
+            <legend>Government Benefits</legend>
+            <div class="container-fluid p-0">
+                <div class="row">
                     <div class="col-12 col-md-auto mb-4">
                         <span>
                             @(Html.Kendo().CheckBox()
-                                  .Name("lifeLineProgram")
-                                  .Label("Lifeline Program")
-                                  .Value("startPlan")
-                                  .Checked(false)
-                              )
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                          .Name("lifeLineProgram")
+                          .Label("Lifeline Program")
+                          .Value("startPlan")
+                          .Checked(false)
+                      )
+                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            </span>
                         </span>
                     </div>
                     <div class="col-12 col-md-auto mb-4">
                         <span>
                             @(Html.Kendo().CheckBox()
-                                 .Name("acp")
-                                 .Label("Affordable Connectivity Program (ACP)")
-                                 .Value("startPlan")
-                                 .Checked(false)
-                             )
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                         .Name("acp")
+                         .Label("Affordable Connectivity Program (ACP)")
+                         .Value("startPlan")
+                         .Checked(false)
+                     )
+                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            </span>
                         </span>
                     </div>
 
@@ -136,23 +149,25 @@
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="alternateID">
                             <label class="form-check-label" for="alternateID">Alternate ID</label>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            </span>
                         </div>
                     </div>
 
                     <!-- Select Eligibility Program -->
                     <div class="col-12 col-md-6 col-xxl-4 mb-4">
                         @(Html.Kendo().DropDownList()
-                            .Name("eligibilityProgram")
-                            .DataTextField("Text")
-                            .DataValueField("Value")
-                            .OptionLabel("")
-                            .Label(label =>
-                            {
-                                label.Content("Select Eligibility Program");
-                                label.Floating(true);
-                            })
-                        )
+                    .Name("eligibilityProgram")
+                    .DataTextField("Text")
+                    .DataValueField("Value")
+                    .OptionLabel("")
+                    .Label(label =>
+                    {
+                        label.Content("Select Eligibility Program");
+                        label.Floating(true);
+                    })
+                )
                     </div>
 
                     <div class="clearfix"></div>
@@ -400,7 +415,9 @@
                             <label class="form-check-label" for="qualifiedDepChild">
                                 <span>Yes, I am qualify through child or dependent</span>
                             </label>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            </span>
                         </div>
                     </div>
 
@@ -411,7 +428,9 @@
                             <label class="form-check-label" for="bqpAlternateID">
                                 <span>Has Alternate ID for BQP</span>
                             </label>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                            </span>
                         </div>
                     </div>
 
@@ -427,7 +446,9 @@
                     <!-- -->
                     <div class="col-12 col-md-auto mb-4">
                         <strong>Select your coverage</strong>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        <span data-bs-toggle="tooltip" data-bs-title="Tooltip Content Goes Here...">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><g transform="translate(-1 -1)"><circle cx="10" cy="10" r="10" transform="translate(2 2)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line y1="4" transform="translate(12 12)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /><line x2="0.01" transform="translate(12 8)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" /></g></svg>
+                        </span>
                     </div>
 
                     <!-- Get Coverage -->

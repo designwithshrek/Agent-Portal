@@ -31,6 +31,11 @@
     border-top: 1px solid #eaeaea;
 }
 
+#ap-step-progress-container {
+    width: 200px; /* Set your desired width */
+    height: 200px; /* Set your desired height */
+}
+
 
 #ap-application-progress h5 {
     color: #1b1565;
@@ -301,6 +306,9 @@ fieldset {
 
 .k-datepicker .k-input-button {
     width: 58px;
+    cursor: text;
+    background-color: transparent;
+    border: none;
 }
 
 .k-grid {

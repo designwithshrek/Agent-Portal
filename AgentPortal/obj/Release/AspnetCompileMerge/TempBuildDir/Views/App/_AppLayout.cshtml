@@ -131,7 +131,22 @@
             </div>
         </div>
     </footer>
-    <script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Tooltip Trigger
+            const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+            const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
+            // Select all DatePicker elements on the page
+            $("input[data-role='datepicker']").click(function () {
+                var datePicker = $(this).data("kendoDatePicker");
+                if (datePicker) {
+                    datePicker.open();
+                }
+            });
+        });
+
+        // Create the Progress Bar
         $("#ap-step-progress").kendoCircularProgressBar({
             min: 0,
             max: 100,
@@ -139,6 +154,15 @@
             animation: false,
             centerTemplate: '<div><span>#= value #%</span></div>',
         });
+
+        // On window resize, redraw the progress bar to 120px
+        $(window).on('resize', (e) => {
+            $("#ap-step-progress").css({ width: "120px", height: "120px" })
+                .data("kendoCircularProgressBar").resize();
+        })
+
+
     </script>
+    @RenderSection("scripts", required: false)
 </body>
 </html>
