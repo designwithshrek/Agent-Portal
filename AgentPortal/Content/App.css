@@ -163,7 +163,7 @@ fieldset {
 .ap-plan-container {
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(19, 23, 31, 0.07);
-    padding: 16px 0;
+    padding: 16px;
 }
 
     .ap-plan-container .k-radio-label {
@@ -314,6 +314,11 @@ fieldset {
 .k-grid {
     overflow: auto;
 }
+    @media screen and (min-width: 1200px) {
+        #DeviceGrid .k-grid-table {
+            table-layout: fixed;
+        }
+    }
 
     .k-grid .k-grid-table .k-table-thead .k-table-row {
         background-color: #1b1565;
@@ -340,4 +345,7 @@ fieldset {
 
         .k-grid .k-grid-table .k-table-tbody .k-table-row .k-table-td {
             padding: 12px 16px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
